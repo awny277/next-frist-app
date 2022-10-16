@@ -21,7 +21,9 @@ const Create = () => {
       <div>
         hello from product {id} {productName}
       </div>
-      <Link href={"/"}>Home</Link>
+      <Link href={"/"}>
+        <a>Home</a>
+      </Link>
     </div>
   );
 };

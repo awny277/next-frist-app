@@ -15,7 +15,9 @@ const Show = () => {
       <div>hello from post ID : {id} title:</div>
       <div>PathName : {router.pathname}</div>
       <div>PathName : {router.asPath}</div>
-      <Link href={"/"}>home</Link>
+      <Link href={"/"}>
+        <a>home</a>
+      </Link>
     </div>
   );
 };

@@ -10,7 +10,9 @@ const Login = () => {
       </Head>
 
       <div>hello from Login</div>
-      <Link href={"/"}>Home</Link>
+      <Link href={"/"}>
+        <a>Home</a>
+      </Link>
     </div>
   );
 };

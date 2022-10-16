@@ -1,9 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { PrintHello } from "../../store/NextSliceHello";
 export default function Post({ posts }) {
-  // const router = useRouter({ posts });
-  // console.log(posts);
+  const dispatch = useDispatch();
+  const { NextSliceHello } = useSelector((state) => state.NextSliceHello);
+  useEffect(() => {
+    dispatch(PrintHello());
+  }, [dispatch]);
   return (
     <div>
       <Head>
@@ -13,6 +19,7 @@ export default function Post({ posts }) {
       </Head>
 
       <div>hello from Post</div>
+      <h1>{NextSliceHello}</h1>
       {/* <button
         onClick={() => {
           router.push({
@@ -26,7 +33,9 @@ export default function Post({ posts }) {
       {posts.map((ele, idx) => {
         return (
           <li key={idx}>
-            <Link href={`post/ssr/${ele.id}`}>{ele.title}</Link>
+            <Link href={`post/ssr/${ele.id}`}>
+              <a>{ele.title}</a>
+            </Link>
           </li>
         );
       })}

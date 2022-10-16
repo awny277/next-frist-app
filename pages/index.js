@@ -12,7 +12,13 @@ export default function Home() {
       </Head>
 
       <div>hello from Home</div>
-      <Link href={"/login"}>login</Link>
+      <Link href={"/login"}>
+        <a>login</a>
+      </Link>
+      <br />
+      <Link href={"/post"}>
+        <a>post</a>
+      </Link>
     </div>
   );
 }

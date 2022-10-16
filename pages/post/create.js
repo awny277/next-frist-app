@@ -10,7 +10,9 @@ const Create = () => {
       </Head>
 
       <div>hello from Create</div>
-      <Link href={"/"}>Home</Link>
+      <Link href={"/"}>
+        <a>Home</a>
+      </Link>
     </div>
   );
 };

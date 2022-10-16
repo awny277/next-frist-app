@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 export default function SSR({ post }) {
   // const router = useRouter();
   // const { id } = router.query;
@@ -20,12 +20,15 @@ export default function SSR({ post }) {
       <div>hello from post ID : {post.id} :</div>
       <div>hello from post title : {post.title}</div>
 
-      <Link href={"/"}>home</Link>
+      <Link href={"/"}>
+        <a>home</a>
+      </Link>
     </div>
   );
 }
 
 export async function getServerSideProps({ params }) {
+  console.log(params); // useParams
   const data = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
