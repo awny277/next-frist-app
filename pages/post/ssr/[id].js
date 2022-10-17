@@ -28,7 +28,6 @@ export default function SSR({ post }) {
 }
 
 export async function getServerSideProps({ params }) {
-  console.log(params); // useParams
   const data = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );

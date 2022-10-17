@@ -3,6 +3,7 @@ import Link from "next/link";
 // import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+// import { initializeUseSelector } from "react-redux/es/hooks/useSelector";
 import { PrintHello } from "../../store/NextSliceHello";
 export default function Post({ posts }) {
   const dispatch = useDispatch();
@@ -45,9 +46,10 @@ export default function Post({ posts }) {
 }
 
 export async function getStaticProps() {
+  // const { NextSliceHello } = useSelector();
   const data = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await data.json();
-  // console.log(posts);
+  // console.log(NextSliceHello);
 
   return {
     props: {
